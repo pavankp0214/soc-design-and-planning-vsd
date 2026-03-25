@@ -73,3 +73,36 @@ Global Placement View:
 Detailed Placement View (Zoomed In):
 Here we can see the individual standard cells strictly aligned to the power and ground rails.
 ![Detailed Placement](images/Day_2_detailed_view.png)
+
+## Day 3: Design and Characterization of One Library Cell
+
+### Part 1: Custom CMOS Inverter Design and SPICE Simulation
+Standard cells are the fundamental building blocks of digital physical design. In this section, we characterize a custom CMOS inverter by extracting its parasitic values and simulating it to find its propagation delays and transition times.
+
+**Cloning the Custom Inverter Repository:**
+We start by cloning the `vsdstdcelldesign` repository, which contains the Magic layout of a custom CMOS inverter, and opening it using the Magic layout tool.
+
+**Inverter Layout in Magic:**
+
+**Identifying the NMOS and PMOS regions:**
+Using the `what` command in the tkcon window, we can identify the specific mask layers used to build the PMOS and NMOS transistors.
+
+**SPICE Extraction from Magic:**
+To simulate the behavior of this layout, we must extract its parasitic resistance and capacitance into a SPICE netlist. We do this using the `extract all` and `ext2spice` commands in the tkcon window.
+
+**Modifying the SPICE Deck:**
+The extracted SPICE netlist (`sky130_inv.spice`) needs to be modified to include the correct standard cell library models, power supply voltages (VDD = 3.3V, VSS = 0V), input pulse parameters, and the `.tran` command for transient analysis.
+
+**Running ngspice Simulation:**
+With the SPICE deck configured, we simulate the circuit using `ngspice` to plot the output voltage (`y`) against the input voltage (`a`) over time.
+
+**Transient Analysis Waveform:**
+
+**Characterizing the Cell Timing:**
+To use this custom cell in our OpenLANE flow, we need to characterize its timing parameters from the graph coordinates. We calculate four main values:
+1. **Rise Time:** Time taken for the output to rise from 20% to 80% of its maximum value.
+2. **Fall Time:** Time taken for the output to fall from 80% to 20% of its maximum value.
+3. **Cell Rise Delay:** Difference in time between the input falling to 50% and the output rising to 50%.
+4. **Cell Fall Delay:** Difference in time between the input rising to 50% and the output falling to 50%.
+
+*(You can enter your calculated values from your terminal here!)*
