@@ -194,3 +194,6 @@ To ensure the clock signal reaches every sequential element (flip-flop) at the s
 ```tcl
 run_cts
 ```
+![Running Placement](images/Day_4_cts_val.png)
+![Placement in Magic](images/Day_4_cts_val_2.png)
+![Expanded Custom Cell](images/Day_4_cts_val_3.png)
