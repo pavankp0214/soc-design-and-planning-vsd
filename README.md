@@ -197,3 +197,53 @@ run_cts
 ![Running Placement](images/Day_4_cts_val.png)
 ![Placement in Magic](images/Day_4_cts_val_2.png)
 ![Expanded Custom Cell](images/Day_4_cts_val_3.png)
+
+# Day 5: Final Routing, Physical Verification, and Layout
+
+Initiating the Power Distribution Network (PDN) generation step in OpenLANE to build power and ground rails.
+![PDN Generation Start](images/Day_5_pdn.png)
+
+Successful completion of the PDN generation, readying the core for signal routing.
+![PDN Complete](images/Day_5_pdn_complete.png)
+
+Executing the `run_routing` command to begin the global and detailed routing processes.
+![Run Routing Command](images/Day_5_run_routing.png)
+
+Monitoring the terminal output as the routing process calculates delays and meets constraints.
+![Routing in Progress](images/Day_5_Routing.png)
+
+Routing completed successfully, with OpenROAD preparing the extracted parasitics for post-route analysis.
+![Routing Completed](images/Day_5_routing_completed.png)
+
+Reviewing the post-route timing analysis report to confirm that all slack requirements are successfully MET.
+![Final Timing Validation](images/Day_5_final_val.png)
+
+OpenLANE log terminal confirming zero DRC violations immediately after the detailed routing stage.
+![No DRC Violations Log](images/Day_5_no_drc.png)
+
+Loading the final, fully-routed DEF file into Magic to view the complete physical layout of the chip.
+![Full Layout View](images/Day_5_layout.png)
+
+Checking the root cell bounding box dimensions and lambda values in the Magic console.
+![Layout Lambda Values](images/Day_5_layout_lambda_val.png)
+
+Full view of the routed layout canvas showing the dense grid of metal interconnects.
+![Routed Layout](images/Day_5_route_layout.png)
+
+Zooming in on the layout to inspect the intricate, multi-layer detailed routing tracks.
+![Detailed Route View](images/Day_5_detailed_route_view.png)
+
+Examining the peripheral view of the layout to check the outer boundaries and macro placements.
+![Peripheral Layout View](images/Day_5_layout_peripherial_view.png)
+
+Close-up inspection of the I/O port connections routed to the edge of the core.
+![Port Connections](images/Day_5_port-connections.png)
+
+Detailed view of the internal physical geometries and routing over the standard cells.
+![Standard Cell View](images/Day_5_layout_std_cell.png)
+
+Final DRC execution log confirming exactly 0 total violations, verifying the design is tape-out ready.
+![Zero DRC Violations](images/Day_5_0_drc.png)
+
+
+
