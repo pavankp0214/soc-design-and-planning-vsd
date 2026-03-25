@@ -16,6 +16,7 @@ To run synthesis, the following commands are used:
 ```tcl
 prep -design picorv32a
 run_synthesis
+```
 
 ### Flop Ratio Calculation
 After synthesis, it is crucial to analyze the design statistics to understand the hardware footprint. From the yosys synthesis reports, we can calculate the flop ratio.
